@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Integration DynamicMessage should display case "one" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case match">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (one)
+  </span> <span class="msg-case">
+    custom two
+  </span> <span class="msg-case">
+    dynamic message
+  </span></span>
+`;
+
+exports[`Integration DynamicMessage should display custom case "two" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (two)
+  </span> <span class="msg-case match">
+    custom two
+  </span> <span class="msg-case">
+    dynamic message
+  </span></span>
+`;
+
+exports[`Integration DynamicMessage should display custom wildcard message for "unknown" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case match" slot-scope="[object Object]">
+    default wildcard (unknown)
+  </span> <span class="msg-case">
+    custom two
+  </span> <span class="msg-case">
+    dynamic message
+  </span></span>
+`;
+
+exports[`Integration DynamicMessage should display dynamic case for "dyn" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (dyn)
+  </span> <span class="msg-case">
+    custom two
+  </span> <span class="msg-case match">
+    dynamic message
+  </span></span>
+`;
+
+exports[`Integration DynamicOverriddenWildcard should display case "one" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case match">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (one)
+  </span> <span class="msg-case">
+    custom two
+  </span> <span class="msg-case">
+    dynamic message
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    custom wildcard [one]
+  </span></span>
+`;
+
+exports[`Integration DynamicOverriddenWildcard should display custom case "two" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (two)
+  </span> <span class="msg-case match">
+    custom two
+  </span> <span class="msg-case">
+    dynamic message
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    custom wildcard [two]
+  </span></span>
+`;
+
+exports[`Integration DynamicOverriddenWildcard should display custom wildcard message for "unknown" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (unknown)
+  </span> <span class="msg-case">
+    custom two
+  </span> <span class="msg-case">
+    dynamic message
+  </span> <span class="msg-case match" slot-scope="[object Object]">
+    custom wildcard [unknown]
+  </span></span>
+`;
+
+exports[`Integration DynamicOverriddenWildcard should display dynamic case for "dyn" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (dyn)
+  </span> <span class="msg-case">
+    custom two
+  </span> <span class="msg-case match">
+    dynamic message
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    custom wildcard [dyn]
+  </span></span>
+`;
+
+exports[`Integration OverriddenMessage should display case "one" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case match">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (one)
+  </span> <span class="msg-case">
+    custom two
+  </span></span>
+`;
+
+exports[`Integration OverriddenMessage should display custom case "two" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (two)
+  </span> <span class="msg-case match">
+    custom two
+  </span></span>
+`;
+
+exports[`Integration OverriddenMessage should display wildcard case for "dyn" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case match" slot-scope="[object Object]">
+    default wildcard (dyn)
+  </span> <span class="msg-case">
+    custom two
+  </span></span>
+`;
+
+exports[`Integration OverriddenMessage should display wildcard message for "unknown" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case match" slot-scope="[object Object]">
+    default wildcard (unknown)
+  </span> <span class="msg-case">
+    custom two
+  </span></span>
+`;
+
+exports[`Integration OverriddenWildcard should display case "one" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case match">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (one)
+  </span> <span class="msg-case">
+    custom two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    custom wildcard [one]
+  </span></span>
+`;
+
+exports[`Integration OverriddenWildcard should display custom case "two" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (two)
+  </span> <span class="msg-case match">
+    custom two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    custom wildcard [two]
+  </span></span>
+`;
+
+exports[`Integration OverriddenWildcard should display custom wildcard case for "dyn" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (dyn)
+  </span> <span class="msg-case">
+    custom two
+  </span> <span class="msg-case match" slot-scope="[object Object]">
+    custom wildcard [dyn]
+  </span></span>
+`;
+
+exports[`Integration OverriddenWildcard should display custom wildcard message for "unknown" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (unknown)
+  </span> <span class="msg-case">
+    custom two
+  </span> <span class="msg-case match" slot-scope="[object Object]">
+    custom wildcard [unknown]
+  </span></span>
+`;
+
+exports[`Integration StdMessages should display case "one" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case match">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (one)
+  </span> </span>
+`;
+
+exports[`Integration StdMessages should display case "two" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case match">
+    default two
+  </span> <span class="msg-case" slot-scope="[object Object]">
+    default wildcard (two)
+  </span> </span>
+`;
+
+exports[`Integration StdMessages should display wildcard case for "dyn" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case match" slot-scope="[object Object]">
+    default wildcard (dyn)
+  </span> </span>
+`;
+
+exports[`Integration StdMessages should display wildcard message for "unknown" 1`] = `
+<span class="msg-switch" slot-scope="[object Object]"><span class="msg-case">
+    default one
+  </span> <span class="msg-case">
+    default two
+  </span> <span class="msg-case match" slot-scope="[object Object]">
+    default wildcard (unknown)
+  </span> </span>
+`;
