@@ -1,5 +1,7 @@
 # msg-switch [![Build Status](https://travis-ci.org/PlanitarInc/msg-switch.svg?branch=master)](https://travis-ci.org/PlanitarInc/msg-switch)
 
+An easy way to display error messages for a predefined set of error codes.
+
 ## Motivation
 
 During our transition from AngularJS (v1.6.x) to VueJS, we encountered a
