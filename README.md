@@ -1,4 +1,4 @@
-# vue-messages
+# msg-switch [![Build Status](https://travis-ci.org/PlanitarInc/msg-switch.svg?branch=master)](https://travis-ci.org/PlanitarInc/msg-switch)
 
 ## Motivation
 
