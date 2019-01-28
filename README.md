@@ -1,4 +1,4 @@
-# msg-switch [![Build Status](https://travis-ci.org/PlanitarInc/msg-switch.svg?branch=master)](https://travis-ci.org/PlanitarInc/msg-switch) [![npm version](https://badge.fury.io/js/msg-switch.svg)](https://badge.fury.io/js/msg-switch)
+# msg-switch [![Build Status](https://travis-ci.org/PlanitarInc/msg-switch.svg?branch=master)](https://travis-ci.org/PlanitarInc/msg-switch) [![npm version](https://badge.fury.io/js/msg-switch.svg)](https://badge.fury.io/js/msg-switch) [![](https://img.shields.io/github/license/PlanitarInc/msg-switch.svg)](https://www.npmjs.com/package/msg-switch)
 
 An easy way to display error messages for a predefined set of error codes.
 
