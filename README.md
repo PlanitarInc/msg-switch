@@ -16,6 +16,12 @@ be displayed. But unlike a switch statement it should be able
 ```html
 // StdError.vue
 <MsgSwitch :value="code">
+  <!--
+    User-defined custom messages comes first,
+    such that they overwrite the default messages.
+  -->
+  <slot :value="value" />
+
   <!-- Here the standard error messages come -->
   <MsgCase when="not_found">Not found.</MsgCase>
   <MsgCase when="unautheticated">Please log in!</MsgCase>
@@ -24,12 +30,6 @@ be displayed. But unlike a switch statement it should be able
   <MsgCase when="*" :slot-scope="{ value }">
     Unknown error: <pre>{{value}}</pre>.
   </MsgCase>
-
-  <!--
-    User-defined custom messages comes here,
-    such that they overwrite the default messages.
-  -->
-  <slot :value="value" />
 </MsgSwitch>
 ```
 

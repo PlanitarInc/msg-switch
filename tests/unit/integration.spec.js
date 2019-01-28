@@ -73,10 +73,10 @@ describe('Integration', () => {
       expect(
         listAllCases(wrapper).map(c => `${c.props.when}: ${c.text}`),
       ).toEqual([
+        'two: custom two',
         'one: default one',
         'two: default two',
         '*: default wildcard (one)',
-        'two: custom two',
       ]);
     });
 
@@ -125,11 +125,11 @@ describe('Integration', () => {
       expect(
         listAllCases(wrapper).map(c => `${c.props.when}: ${c.text}`),
       ).toEqual([
+        'two: custom two',
+        '*: custom wildcard [one]',
         'one: default one',
         'two: default two',
         '*: default wildcard (one)',
-        'two: custom two',
-        '*: custom wildcard [one]',
       ]);
     });
 
@@ -178,11 +178,11 @@ describe('Integration', () => {
       expect(
         listAllCases(wrapper).map(c => `${c.props.when}: ${c.text}`),
       ).toEqual([
+        'two: custom two',
+        'dyn: dynamic message',
         'one: default one',
         'two: default two',
         '*: default wildcard (one)',
-        'two: custom two',
-        'dyn: dynamic message',
       ]);
     });
 
@@ -231,12 +231,12 @@ describe('Integration', () => {
       expect(
         listAllCases(wrapper).map(c => `${c.props.when}: ${c.text}`),
       ).toEqual([
-        'one: default one',
-        'two: default two',
-        '*: default wildcard (one)',
         'two: custom two',
         'dyn: dynamic message',
         '*: custom wildcard [one]',
+        'one: default one',
+        'two: default two',
+        '*: default wildcard (one)',
       ]);
     });
 

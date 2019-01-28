@@ -29,7 +29,8 @@ export default {
 
   methods: {
     registerMsgCase(matchingValue, child) {
-      this.cases[matchingValue] = child;
+      // First matching case is displayed.
+      this.cases[matchingValue] = this.cases[matchingValue] || child;
       this.updateDisplayedCase();
     },
 

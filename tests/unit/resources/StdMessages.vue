@@ -1,5 +1,6 @@
 <template>
   <MsgSwitch :slot-scope="{ value }" :value="value">
+    <slot :value="value" />
     <MsgCase when="one">
       default one
     </MsgCase>
@@ -9,7 +10,6 @@
     <MsgCase :slot-scope="{ value }" when="*">
       default wildcard ({{ value }})
     </MsgCase>
-    <slot :value="value" />
   </MsgSwitch>
 </template>
 
