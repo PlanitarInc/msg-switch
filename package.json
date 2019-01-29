@@ -1,6 +1,6 @@
 {
   "name": "msg-switch",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "license": "MIT",
   "homepage": "https://github.com/PlanitarInc/msg-switch",
   "main": "src/index.js",
