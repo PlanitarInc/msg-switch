@@ -44,23 +44,12 @@ export default {
 
       this.displayedCase = newCase;
       if (oldCase) {
-        oldCase.$el.classList.remove('match');
+        oldCase.hide(this.value);
       }
       if (newCase) {
-        newCase.$el.classList.add('match');
-        newCase.updateCode(this.value);
+        newCase.show(this.value);
       }
     },
   },
 };
 </script>
-
-<style>
-.msg-switch .msg-case {
-  display: none;
-}
-
-.msg-switch .msg-case.match {
-  display: inherit;
-}
-</style>

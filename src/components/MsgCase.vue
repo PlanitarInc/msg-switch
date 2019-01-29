@@ -1,5 +1,5 @@
 <template>
-  <span class="msg-case">
+  <span v-if="shown" class="msg-case">
     <slot :value="currentValue" />
   </span>
 </template>
@@ -14,7 +14,10 @@ export default {
   },
 
   data() {
-    return { currentValue: '' };
+    return {
+      currentValue: '',
+      shown: false,
+    };
   },
 
   mounted() {
@@ -22,8 +25,12 @@ export default {
   },
 
   methods: {
-    updateCode(currentValue) {
+    show(currentValue) {
       this.currentValue = currentValue;
+      this.shown = true;
+    },
+    hide() {
+      this.shown = false;
     },
   },
 };

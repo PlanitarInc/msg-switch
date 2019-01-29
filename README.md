@@ -60,7 +60,7 @@ The requirements are as follows:
 
 ## TODO
 
-- Do not add hidden cases to DOM.
+- ~~Do not add hidden cases to DOM.~~
 - Support displaying multiple messages similar to [AngularJS' ngMessages](https://code.angularjs.org/1.6.10/docs/api/ngMessages/directive/ngMessages).
 
 ## Project setup
