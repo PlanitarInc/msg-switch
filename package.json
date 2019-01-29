@@ -4,6 +4,7 @@
   "license": "MIT",
   "homepage": "https://github.com/PlanitarInc/msg-switch",
   "browser": "src/index.js",
+  "sideEffects": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
