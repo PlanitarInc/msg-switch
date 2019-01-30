@@ -71,14 +71,6 @@ exports[`Integration DynamicOverriddenWildcard should display dynamic case for "
 <!----></span>
 `;
 
-exports[`Integration ObjectCode should display case "one" 1`] = `
-<span class="msg-switch"> <span class="msg-case">
-    default one
-  </span>
-<!---->
-<!----></span>
-`;
-
 exports[`Integration OverriddenMessage should display case "one" 1`] = `
 <span class="msg-switch"><!----> <span class="msg-case">
       default one

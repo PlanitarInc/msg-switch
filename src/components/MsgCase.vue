@@ -1,5 +1,5 @@
 <template>
-  <span v-if="shown" class="msg-case">
+  <span v-if="isShown" class="msg-case">
     <slot :value="currentValue" />
   </span>
 </template>
@@ -16,21 +16,34 @@ export default {
   data() {
     return {
       currentValue: '',
-      shown: false,
+      shownAt: 0,
+      hiddenAt: 0,
     };
   },
 
-  mounted() {
+  computed: {
+    isShown() {
+      return this.shownAt > this.hiddenAt;
+    },
+  },
+
+  created() {
     this.registerMsgCase(this.when, this);
   },
 
   methods: {
-    show(currentValue) {
+    show(epoch, currentValue) {
       this.currentValue = currentValue;
-      this.shown = true;
+      // We update `shownAt` on the next tick in order to ensure that
+      // when v-if renders the slot the ctx is up-to-date.
+      this.$nextTick(() => {
+        if (this.shownAt < epoch) {
+          this.shownAt = epoch;
+        }
+      });
     },
-    hide() {
-      this.shown = false;
+    hide(epoch) {
+      this.hiddenAt = epoch;
     },
   },
 };

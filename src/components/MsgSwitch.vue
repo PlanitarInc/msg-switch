@@ -12,7 +12,7 @@ export default {
   },
 
   data() {
-    return { cases: {} };
+    return { cases: {}, epoch: 0 };
   },
 
   provide() {
@@ -23,34 +23,39 @@ export default {
 
   watch: {
     value() {
-      this.updateDisplayedCase();
+      this.updateDisplayedCase(true);
     },
   },
 
   methods: {
-    registerMsgCase(matchingValue, child) {
+    registerMsgCase(matchingValue, caseComponent) {
       // First matching case is displayed.
-      this.cases[matchingValue] = this.cases[matchingValue] || child;
-      this.updateDisplayedCase();
+      if (this.cases[matchingValue]) {
+        return;
+      }
+
+      this.cases[matchingValue] = caseComponent;
+      this.updateDisplayedCase(false);
     },
 
-    updateDisplayedCase() {
+    updateDisplayedCase(forceUpdate) {
       const oldCase = this.displayedCase;
       const newCase = this.cases[this.value] || this.cases['*'];
 
+      this.epoch++;
       if (oldCase === newCase) {
-        if (oldCase) {
-          oldCase.show(this.value);
+        if (forceUpdate && oldCase) {
+          oldCase.show(this.epoch, this.value);
         }
         return;
       }
 
       this.displayedCase = newCase;
       if (oldCase) {
-        oldCase.hide();
+        oldCase.hide(this.epoch);
       }
       if (newCase) {
-        newCase.show(this.value);
+        newCase.show(this.epoch, this.value);
       }
     },
   },
