@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Integration DynamicMessage should display case "one" 1`] = `
+exports[`Integration simple SimpleDynMessages should display case "one" 1`] = `
 <span class="msg-switch"><!----> <!----> <span class="msg-case">
       default one
     </span>
@@ -8,7 +8,7 @@ exports[`Integration DynamicMessage should display case "one" 1`] = `
 <!----></span>
 `;
 
-exports[`Integration DynamicMessage should display custom case "two" 1`] = `
+exports[`Integration simple SimpleDynMessages should display custom case "two" 1`] = `
 <span class="msg-switch"><span class="msg-case">
     custom two
   </span>
@@ -18,13 +18,13 @@ exports[`Integration DynamicMessage should display custom case "two" 1`] = `
 <!----></span>
 `;
 
-exports[`Integration DynamicMessage should display custom wildcard message for "unknown" 1`] = `
+exports[`Integration simple SimpleDynMessages should display custom wildcard message for "unknown" 1`] = `
 <span class="msg-switch"><!----> <!----> <!----> <!----> <span class="msg-case">
       default wildcard (unknown)
     </span></span>
 `;
 
-exports[`Integration DynamicMessage should display dynamic case for "dyn" 1`] = `
+exports[`Integration simple SimpleDynMessages should display dynamic case for "dyn" 1`] = `
 <span class="msg-switch"><!----> <span class="msg-case">
     dynamic message
   </span>
@@ -33,7 +33,7 @@ exports[`Integration DynamicMessage should display dynamic case for "dyn" 1`] = 
 <!----></span>
 `;
 
-exports[`Integration DynamicOverriddenWildcard should display case "one" 1`] = `
+exports[`Integration simple SimpleDynOverrideMessages should display case "one" 1`] = `
 <span class="msg-switch"><!----> <!----> <!----> <span class="msg-case">
       default one
     </span>
@@ -41,7 +41,7 @@ exports[`Integration DynamicOverriddenWildcard should display case "one" 1`] = `
 <!----></span>
 `;
 
-exports[`Integration DynamicOverriddenWildcard should display custom case "two" 1`] = `
+exports[`Integration simple SimpleDynOverrideMessages should display custom case "two" 1`] = `
 <span class="msg-switch"><span class="msg-case">
     custom two
   </span>
@@ -52,7 +52,7 @@ exports[`Integration DynamicOverriddenWildcard should display custom case "two" 
 <!----></span>
 `;
 
-exports[`Integration DynamicOverriddenWildcard should display custom wildcard message for "unknown" 1`] = `
+exports[`Integration simple SimpleDynOverrideMessages should display custom wildcard message for "unknown" 1`] = `
 <span class="msg-switch"><!----> <!----> <span class="msg-case">
       custom wildcard [unknown]
     </span>
@@ -61,7 +61,7 @@ exports[`Integration DynamicOverriddenWildcard should display custom wildcard me
 <!----></span>
 `;
 
-exports[`Integration DynamicOverriddenWildcard should display dynamic case for "dyn" 1`] = `
+exports[`Integration simple SimpleDynOverrideMessages should display dynamic case for "dyn" 1`] = `
 <span class="msg-switch"><!----> <span class="msg-case">
     dynamic message
   </span>
@@ -71,7 +71,7 @@ exports[`Integration DynamicOverriddenWildcard should display dynamic case for "
 <!----></span>
 `;
 
-exports[`Integration OverriddenMessage should display case "one" 1`] = `
+exports[`Integration simple SimpleOverrideMessages should display case "one" 1`] = `
 <span class="msg-switch"><!----> <span class="msg-case">
       default one
     </span>
@@ -79,7 +79,7 @@ exports[`Integration OverriddenMessage should display case "one" 1`] = `
 <!----></span>
 `;
 
-exports[`Integration OverriddenMessage should display custom case "two" 1`] = `
+exports[`Integration simple SimpleOverrideMessages should display custom case "two" 1`] = `
 <span class="msg-switch"><span class="msg-case">
     custom two
   </span>
@@ -88,19 +88,19 @@ exports[`Integration OverriddenMessage should display custom case "two" 1`] = `
 <!----></span>
 `;
 
-exports[`Integration OverriddenMessage should display wildcard case for "dyn" 1`] = `
+exports[`Integration simple SimpleOverrideMessages should display wildcard case for "dyn" 1`] = `
 <span class="msg-switch"><!----> <!----> <!----> <span class="msg-case">
       default wildcard (dyn)
     </span></span>
 `;
 
-exports[`Integration OverriddenMessage should display wildcard message for "unknown" 1`] = `
+exports[`Integration simple SimpleOverrideMessages should display wildcard message for "unknown" 1`] = `
 <span class="msg-switch"><!----> <!----> <!----> <span class="msg-case">
       default wildcard (unknown)
     </span></span>
 `;
 
-exports[`Integration OverriddenWildcard should display case "one" 1`] = `
+exports[`Integration simple SimpleOverrideWildcard should display case "one" 1`] = `
 <span class="msg-switch"><!----> <!----> <span class="msg-case">
       default one
     </span>
@@ -108,7 +108,7 @@ exports[`Integration OverriddenWildcard should display case "one" 1`] = `
 <!----></span>
 `;
 
-exports[`Integration OverriddenWildcard should display custom case "two" 1`] = `
+exports[`Integration simple SimpleOverrideWildcard should display custom case "two" 1`] = `
 <span class="msg-switch"><span class="msg-case">
     custom two
   </span>
@@ -118,7 +118,7 @@ exports[`Integration OverriddenWildcard should display custom case "two" 1`] = `
 <!----></span>
 `;
 
-exports[`Integration OverriddenWildcard should display custom wildcard case for "dyn" 1`] = `
+exports[`Integration simple SimpleOverrideWildcard should display custom wildcard case for "dyn" 1`] = `
 <span class="msg-switch"><!----> <span class="msg-case">
       custom wildcard [dyn]
     </span>
@@ -127,7 +127,7 @@ exports[`Integration OverriddenWildcard should display custom wildcard case for 
 <!----></span>
 `;
 
-exports[`Integration OverriddenWildcard should display custom wildcard message for "unknown" 1`] = `
+exports[`Integration simple SimpleOverrideWildcard should display custom wildcard message for "unknown" 1`] = `
 <span class="msg-switch"><!----> <span class="msg-case">
       custom wildcard [unknown]
     </span>
@@ -136,7 +136,7 @@ exports[`Integration OverriddenWildcard should display custom wildcard message f
 <!----></span>
 `;
 
-exports[`Integration StdMessages should display case "one" 1`] = `
+exports[`Integration simple SimpleStdMessages should display case "one" 1`] = `
 <span class="msg-switch"> <span class="msg-case">
       default one
     </span>
@@ -144,20 +144,20 @@ exports[`Integration StdMessages should display case "one" 1`] = `
 <!----></span>
 `;
 
-exports[`Integration StdMessages should display case "two" 1`] = `
+exports[`Integration simple SimpleStdMessages should display case "two" 1`] = `
 <span class="msg-switch"> <!----> <span class="msg-case">
       default two
     </span>
 <!----></span>
 `;
 
-exports[`Integration StdMessages should display wildcard case for "dyn" 1`] = `
+exports[`Integration simple SimpleStdMessages should display wildcard case for "dyn" 1`] = `
 <span class="msg-switch"> <!----> <!----> <span class="msg-case">
       default wildcard (dyn)
     </span></span>
 `;
 
-exports[`Integration StdMessages should display wildcard message for "unknown" 1`] = `
+exports[`Integration simple SimpleStdMessages should display wildcard message for "unknown" 1`] = `
 <span class="msg-switch"> <!----> <!----> <span class="msg-case">
       default wildcard (unknown)
     </span></span>

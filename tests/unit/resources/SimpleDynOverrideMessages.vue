@@ -1,5 +1,5 @@
 <template>
-  <StdMessages :code="code">
+  <SimpleStdMessages :code="code">
     <MsgCase when="two">
       custom two
     </MsgCase>
@@ -11,16 +11,16 @@
         custom wildcard [{{ value }}]
       </template>
     </MsgCase>
-  </StdMessages>
+  </SimpleStdMessages>
 </template>
 
 <script>
-import StdMessages from './StdMessages';
+import SimpleStdMessages from './SimpleStdMessages';
 import { MsgCase } from '../../../src';
 
 export default {
   components: {
-    StdMessages,
+    SimpleStdMessages,
     MsgCase,
   },
   props: {
