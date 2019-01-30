@@ -39,12 +39,15 @@ export default {
       const newCase = this.cases[this.value] || this.cases['*'];
 
       if (oldCase === newCase) {
+        if (oldCase) {
+          oldCase.show(this.value);
+        }
         return;
       }
 
       this.displayedCase = newCase;
       if (oldCase) {
-        oldCase.hide(this.value);
+        oldCase.hide();
       }
       if (newCase) {
         newCase.show(this.value);
