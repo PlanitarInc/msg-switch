@@ -1,5 +1,5 @@
 <template>
-  <StdMessages :value="value">
+  <StdMessages :code="code">
     <MsgCase when="two">
       custom two
     </MsgCase>
@@ -16,7 +16,7 @@ export default {
     MsgCase,
   },
   props: {
-    value: { type: String, default: '' },
+    code: { type: String, default: '' },
   },
 };
 </script>

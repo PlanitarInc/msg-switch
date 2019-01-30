@@ -1,13 +1,15 @@
 <template>
-  <StdMessages :value="value">
+  <StdMessages :code="code">
     <MsgCase when="two">
       custom two
     </MsgCase>
     <MsgCase when="dyn">
       dynamic message
     </MsgCase>
-    <MsgCase :slot-scope="{ value }" when="*">
-      custom wildcard [{{ value }}]
+    <MsgCase when="*">
+      <template slot-scope="{ value }">
+        custom wildcard [{{ value }}]
+      </template>
     </MsgCase>
   </StdMessages>
 </template>
@@ -22,7 +24,7 @@ export default {
     MsgCase,
   },
   props: {
-    value: { type: String, default: '' },
+    code: { type: String, default: '' },
   },
 };
 </script>

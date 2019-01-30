@@ -15,7 +15,7 @@ describe('Integration', () => {
 
     beforeAll(() => {
       wrapper = mount(StdMessages, {
-        propsData: { value: 'one' },
+        propsData: { code: 'one' },
       });
     });
 
@@ -25,19 +25,19 @@ describe('Integration', () => {
     });
 
     test('should display case "two"', () => {
-      wrapper.setProps({ value: 'two' });
+      wrapper.setProps({ code: 'two' });
       expect(wrapper.text()).toEqual('default two');
       expect(wrapper.html()).toMatchSnapshot();
     });
 
     test('should display wildcard case for "dyn"', () => {
-      wrapper.setProps({ value: 'dyn' });
+      wrapper.setProps({ code: 'dyn' });
       expect(wrapper.text()).toEqual('default wildcard (dyn)');
       expect(wrapper.html()).toMatchSnapshot();
     });
 
     test('should display wildcard message for "unknown"', () => {
-      wrapper.setProps({ value: 'unknown' });
+      wrapper.setProps({ code: 'unknown' });
       expect(wrapper.text()).toEqual('default wildcard (unknown)');
       expect(wrapper.html()).toMatchSnapshot();
     });
@@ -48,7 +48,7 @@ describe('Integration', () => {
 
     beforeAll(() => {
       wrapper = mount(OverriddenMessage, {
-        propsData: { value: 'one' },
+        propsData: { code: 'one' },
       });
     });
 
@@ -58,19 +58,19 @@ describe('Integration', () => {
     });
 
     test('should display custom case "two"', () => {
-      wrapper.setProps({ value: 'two' });
+      wrapper.setProps({ code: 'two' });
       expect(wrapper.text()).toEqual('custom two');
       expect(wrapper.html()).toMatchSnapshot();
     });
 
     test('should display wildcard case for "dyn"', () => {
-      wrapper.setProps({ value: 'dyn' });
+      wrapper.setProps({ code: 'dyn' });
       expect(wrapper.text()).toEqual('default wildcard (dyn)');
       expect(wrapper.html()).toMatchSnapshot();
     });
 
     test('should display wildcard message for "unknown"', () => {
-      wrapper.setProps({ value: 'unknown' });
+      wrapper.setProps({ code: 'unknown' });
       expect(wrapper.text()).toEqual('default wildcard (unknown)');
       expect(wrapper.html()).toMatchSnapshot();
     });
@@ -81,7 +81,7 @@ describe('Integration', () => {
 
     beforeAll(() => {
       wrapper = mount(OverriddenWildcard, {
-        propsData: { value: 'one' },
+        propsData: { code: 'one' },
       });
     });
 
@@ -91,19 +91,19 @@ describe('Integration', () => {
     });
 
     test('should display custom case "two"', () => {
-      wrapper.setProps({ value: 'two' });
+      wrapper.setProps({ code: 'two' });
       expect(wrapper.text()).toEqual('custom two');
       expect(wrapper.html()).toMatchSnapshot();
     });
 
     test('should display custom wildcard case for "dyn"', () => {
-      wrapper.setProps({ value: 'dyn' });
+      wrapper.setProps({ code: 'dyn' });
       expect(wrapper.text()).toEqual('custom wildcard [dyn]');
       expect(wrapper.html()).toMatchSnapshot();
     });
 
     test('should display custom wildcard message for "unknown"', () => {
-      wrapper.setProps({ value: 'unknown' });
+      wrapper.setProps({ code: 'unknown' });
       expect(wrapper.text()).toEqual('custom wildcard [unknown]');
       expect(wrapper.html()).toMatchSnapshot();
     });
@@ -114,7 +114,7 @@ describe('Integration', () => {
 
     beforeAll(() => {
       wrapper = mount(DynamicMessage, {
-        propsData: { value: 'one' },
+        propsData: { code: 'one' },
       });
     });
 
@@ -124,19 +124,19 @@ describe('Integration', () => {
     });
 
     test('should display custom case "two"', () => {
-      wrapper.setProps({ value: 'two' });
+      wrapper.setProps({ code: 'two' });
       expect(wrapper.text()).toEqual('custom two');
       expect(wrapper.html()).toMatchSnapshot();
     });
 
     test('should display dynamic case for "dyn"', () => {
-      wrapper.setProps({ value: 'dyn' });
+      wrapper.setProps({ code: 'dyn' });
       expect(wrapper.text()).toEqual('dynamic message');
       expect(wrapper.html()).toMatchSnapshot();
     });
 
     test('should display custom wildcard message for "unknown"', () => {
-      wrapper.setProps({ value: 'unknown' });
+      wrapper.setProps({ code: 'unknown' });
       expect(wrapper.text()).toEqual('default wildcard (unknown)');
       expect(wrapper.html()).toMatchSnapshot();
     });
@@ -147,7 +147,7 @@ describe('Integration', () => {
 
     beforeAll(() => {
       wrapper = mount(DynamicOverriddenWildcard, {
-        propsData: { value: 'one' },
+        propsData: { code: 'one' },
       });
     });
 
@@ -157,19 +157,19 @@ describe('Integration', () => {
     });
 
     test('should display custom case "two"', () => {
-      wrapper.setProps({ value: 'two' });
+      wrapper.setProps({ code: 'two' });
       expect(wrapper.text()).toEqual('custom two');
       expect(wrapper.html()).toMatchSnapshot();
     });
 
     test('should display dynamic case for "dyn"', () => {
-      wrapper.setProps({ value: 'dyn' });
+      wrapper.setProps({ code: 'dyn' });
       expect(wrapper.text()).toEqual('dynamic message');
       expect(wrapper.html()).toMatchSnapshot();
     });
 
     test('should display custom wildcard message for "unknown"', () => {
-      wrapper.setProps({ value: 'unknown' });
+      wrapper.setProps({ code: 'unknown' });
       expect(wrapper.text()).toEqual('custom wildcard [unknown]');
       expect(wrapper.html()).toMatchSnapshot();
     });

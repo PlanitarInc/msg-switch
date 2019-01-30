@@ -1,15 +1,17 @@
 <template>
-  <MsgSwitch :slot-scope="{ value }" :value="value">
-    <slot :value="value" />
-    <MsgCase when="one">
-      default one
-    </MsgCase>
-    <MsgCase when="two">
-      default two
-    </MsgCase>
-    <MsgCase :slot-scope="{ value }" when="*">
-      default wildcard ({{ value }})
-    </MsgCase>
+  <MsgSwitch :value="code">
+    <template slot-scope="{ value }">
+      <slot :value="value" />
+      <MsgCase when="one">
+        default one
+      </MsgCase>
+      <MsgCase when="two">
+        default two
+      </MsgCase>
+      <MsgCase when="*">
+        default wildcard ({{ value }})
+      </MsgCase>
+    </template>
   </MsgSwitch>
 </template>
 
@@ -22,7 +24,7 @@ export default {
     MsgCase,
   },
   props: {
-    value: { type: String, default: '' },
+    code: { type: String, default: '' },
   },
 };
 </script>
