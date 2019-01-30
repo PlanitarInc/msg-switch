@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Integration context CtxDynMessages should display case "one" 1`] = `
+<span class="msg-switch"><!----> <!----> <span class="msg-case">
+    default one
+  </span>
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxDynMessages should display custom case "two" 1`] = `
+<span class="msg-switch"><span class="msg-case">
+      custom two @deep prop@
+    </span>
+<!---->
+<!---->
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxDynMessages should display custom wildcard message for "unknown" 1`] = `
+<span class="msg-switch"><!----> <!----> <!----> <!----> <span class="msg-case">
+      default wildcard (unknown) <span>(other prop)</span></span></span>
+`;
+
+exports[`Integration context CtxDynMessages should display dynamic case for "dyn" 1`] = `
+<span class="msg-switch"><!----> <span class="msg-case">
+      dynamic message -dyn-
+    </span>
+<!---->
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxDynOverrideMessages should display case "one" 1`] = `
+<span class="msg-switch"><!----> <!----> <!----> <span class="msg-case">
+    default one
+  </span>
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxDynOverrideMessages should display custom case "two" 1`] = `
+<span class="msg-switch"><span class="msg-case">
+      custom two @deep prop@
+    </span>
+<!---->
+<!---->
+<!---->
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxDynOverrideMessages should display custom wildcard message for "unknown" 1`] = `
+<span class="msg-switch"><!----> <!----> <span class="msg-case">
+      custom wildcard |unknown<span>|other prop</span>|
+</span>
+<!---->
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxDynOverrideMessages should display dynamic case for "dyn" 1`] = `
+<span class="msg-switch"><!----> <span class="msg-case">
+      dynamic message -dyn-
+    </span>
+<!---->
+<!---->
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxOverrideMessages should display case "one" 1`] = `
+<span class="msg-switch"><!----> <span class="msg-case">
+    default one
+  </span>
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxOverrideMessages should display custom case "two" 1`] = `
+<span class="msg-switch"><span class="msg-case">
+      custom two [deep prop]
+    </span>
+<!---->
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxOverrideMessages should display wildcard case for "dyn" 1`] = `
+<span class="msg-switch"><!----> <!----> <!----> <span class="msg-case">
+      default wildcard (dyn) <!----></span></span>
+`;
+
+exports[`Integration context CtxOverrideMessages should display wildcard message for "unknown" 1`] = `
+<span class="msg-switch"><!----> <!----> <!----> <span class="msg-case">
+      default wildcard (unknown) <span>(other prop)</span></span></span>
+`;
+
+exports[`Integration context CtxOverrideWildcard should display case "one" 1`] = `
+<span class="msg-switch"><!----> <!----> <span class="msg-case">
+    default one
+  </span>
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxOverrideWildcard should display custom case "two" 1`] = `
+<span class="msg-switch"><span class="msg-case">
+      custom two @deep prop@
+    </span>
+<!---->
+<!---->
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxOverrideWildcard should display custom wildcard case for "dyn" 1`] = `
+<span class="msg-switch"><!----> <span class="msg-case">
+      custom wildcard |dyn<!---->|
+    </span>
+<!---->
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxOverrideWildcard should display custom wildcard message for "unknown" 1`] = `
+<span class="msg-switch"><!----> <span class="msg-case">
+      custom wildcard |unknown<span>|other prop</span>|
+</span>
+<!---->
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxStdMessages should display case "one" 1`] = `
+<span class="msg-switch"> <span class="msg-case">
+    default one
+  </span>
+<!---->
+<!----></span>
+`;
+
+exports[`Integration context CtxStdMessages should display case "two" 1`] = `
+<span class="msg-switch"> <!----> <span class="msg-case">
+      default two (deep prop)
+    </span>
+<!----></span>
+`;
+
+exports[`Integration context CtxStdMessages should display wildcard case for "dyn" 1`] = `
+<span class="msg-switch"> <!----> <!----> <span class="msg-case">
+      default wildcard (dyn) <!----></span></span>
+`;
+
+exports[`Integration context CtxStdMessages should display wildcard message for "unknown" 1`] = `
+<span class="msg-switch"> <!----> <!----> <span class="msg-case">
+      default wildcard (unknown) <span>(other prop)</span></span></span>
+`;

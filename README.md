@@ -9,9 +9,19 @@ problem. We struggled to find an easy way to migrate an AngularJS component
 relying on
 [ngMessages directive](https://code.angularjs.org/1.6.10/docs/api/ngMessages/directive/ngMessages).
 
-The component is used to display an error message based on an error code.
-Basically, it behaves as a huge switch statement: chooses the right message to
-be displayed. But unlike a switch statement it should be able 
+The requirements are as follows:
+- Define lists of messages.
+- Re-use these lists.
+- Override message in these lists on a per-case basis.
+- Extend these lists.
+
+## Examples
+
+### Basic Example
+
+In this basic example the components are used to display an error message based
+on an error code. Basically, it behaves as a huge switch statement: chooses the
+right message to be displayed. But unlike a switch statement it should be able 
 
 ```html
 // StdError.vue
@@ -23,12 +33,14 @@ be displayed. But unlike a switch statement it should be able
   <slot :value="value" />
 
   <!-- Here the standard error messages come -->
-  <MsgCase when="not_found">Not found.</MsgCase>
   <MsgCase when="unautheticated">Please log in!</MsgCase>
+  <MsgCase when="not_found">Not found.</MsgCase>
   <MsgCase when="forbidden">You do not enough permissions.</MsgCase>
   <!-- A standrard wildcard case. -->
-  <MsgCase when="*" :slot-scope="{ value }">
-    Unknown error: <pre>{{value}}</pre>.
+  <MsgCase when="*">
+    <template slot-scope="{ value }">
+      Unknown error: <pre>{{value}}</pre>.
+    </template>
   </MsgCase>
 </MsgSwitch>
 ```
@@ -52,11 +64,55 @@ In the example above the following scenarios are possible:
 - If the error code is `dynamic`, the custom error message would be displayed:
     `Message for error code missing in StdError.`.
 
-The requirements are as follows:
-- Define lists of messages.
-- Re-use these lists.
-- Override message in these lists on a per-case basis.
-- Extend these lists.
+### Context Example
+
+In this example an additional context is passed to `MsgSwitch`. This context is
+treated as an opaque value and is passed as is to `MsgCase` components.
+It can be used inside `MsgCase` components using
+[scoped slots](https://vuejs.org/v2/guide/components-slots.html#Scoped-Slots) as
+show below.
+
+```html
+// StdErrorWithContext.vue
+<MsgSwitch :value="code" :ctx="someObject">
+  <!--
+    User-defined custom messages comes first,
+    such that they overwrite the default messages.
+  -->
+  <slot :value="value" />
+
+  <!-- Here the standard error messages come -->
+  <MsgCase when="unautheticated">Please log in!</MsgCase>
+  <MsgCase when="not_found">
+    <template slot-scope="{ ctx }">
+      User {{ ctx.email }} was not found.
+    </template>
+  </MsgCase>
+  <MsgCase when="forbidden">
+    <template slot-scope="{ ctx }">
+      You do not enough permissions to {{ ctx.method }} {{ ctx.resourceName }}.
+    </template>
+  </MsgCase>
+  <!-- A standrard wildcard case. -->
+  <MsgCase when="*">
+    <template slot-scope="{ ctx, value }">
+      Unknown error (<code>{{value}}</code>): <pre>{{ ctx }}</pre>.
+    </template>
+  </MsgCase>
+</MsgSwitch>
+```
+
+Than this component is used as follows:
+
+```html
+// App.vue
+<StdError :value="error.code">
+  <MsgCase when="not_found">The document was not found.</MsgCase>
+  <MsgCase when="forbidden">You are not allowed to edit the document.</MsgCase>
+  <MsgCase when="dynamic">Message for error code missing in StdError.</MsgCase>
+</StdError>
+```
+
 
 ## TODO
 

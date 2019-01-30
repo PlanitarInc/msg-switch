@@ -1,7 +1,7 @@
 <template>
   <span class="msg-switch">
     <!-- list of overridings and dynamic messages -->
-    <slot :value="value" />
+    <slot :value="value" :ctx="ctx" />
   </span>
 </template>
 
@@ -9,6 +9,7 @@
 export default {
   props: {
     value: { type: String, default: '' },
+    ctx: { type: Object, default: null },
   },
 
   data() {
@@ -23,6 +24,9 @@ export default {
 
   watch: {
     value() {
+      this.updateDisplayedCase(true);
+    },
+    ctx() {
       this.updateDisplayedCase(true);
     },
   },
@@ -45,7 +49,7 @@ export default {
       this.epoch++;
       if (oldCase === newCase) {
         if (forceUpdate && oldCase) {
-          oldCase.show(this.epoch, this.value);
+          oldCase.show(this.epoch, this.value, this.ctx);
         }
         return;
       }
@@ -55,7 +59,7 @@ export default {
         oldCase.hide(this.epoch);
       }
       if (newCase) {
-        newCase.show(this.epoch, this.value);
+        newCase.show(this.epoch, this.value, this.ctx);
       }
     },
   },
