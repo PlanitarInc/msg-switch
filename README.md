@@ -85,7 +85,7 @@ show below.
   <MsgCase when="unautheticated">Please log in!</MsgCase>
   <MsgCase when="not_found">
     <template slot-scope="{ ctx }">
-      User {{ ctx.email }} was not found.
+      Resource {{ ctx.id }} was not found.
     </template>
   </MsgCase>
   <MsgCase when="forbidden">
@@ -106,11 +106,19 @@ Than this component is used as follows:
 
 ```html
 // App.vue
-<StdError :value="error.code">
-  <MsgCase when="not_found">The document was not found.</MsgCase>
-  <MsgCase when="forbidden">You are not allowed to edit the document.</MsgCase>
-  <MsgCase when="dynamic">Message for error code missing in StdError.</MsgCase>
-</StdError>
+<StdErrorWithContext :value="error.code">
+  <MsgCase when="not_found">
+    <template slot-scope="{ ctx }">
+      User {{ ctx.id }} was not found.
+    </template>
+  </MsgCase>
+  <MsgCase when="dynamic">
+    <template slot-scope="{ ctx }">
+      Message for error code missing in StdError:
+      <pre>{{ ctx.someDebugInfo }}</pre>.
+    </template>
+  </MsgCase>
+</StdErrorWithContext>
 ```
 
 
