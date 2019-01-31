@@ -1,4 +1,4 @@
-import Vue from 'Vue';
+import Vue from 'vue';
 import { mount } from '@vue/test-utils';
 
 import CtxStdMessages from './resources/CtxStdMessages';
