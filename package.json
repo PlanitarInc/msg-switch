@@ -12,8 +12,8 @@
     "test": "npm run test:unit -- \"$@\"",
     "test:unit": "vue-cli-service test:unit"
   },
-  "dependencies": {
-    "vue": "^2.5.21"
+  "peerDependencies": {
+    "vue": "^2.5.22"
   },
   "devDependencies": {
     "@plntr/eslint-config": "^1.0.0",
@@ -34,6 +34,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.0",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-vue": "^5.0.0",
+    "vue": "^2.5.22",
     "vue-template-compiler": "^2.5.21"
   }
 }
