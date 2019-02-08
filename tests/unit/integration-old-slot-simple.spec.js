@@ -1,23 +1,21 @@
 import Vue from 'vue';
 import { mount } from '@vue/test-utils';
 
-import CtxStdMessages from './resources/CtxStdMessages';
-import CtxOverrideMessages from './resources/CtxOverrideMessages';
-import CtxOverrideWildcard from './resources/CtxOverrideWildcard';
-import CtxDynMessages from './resources/CtxDynMessages';
-import CtxDynOverrideMessages from './resources/CtxDynOverrideMessages';
+import SimpleStdMessages from './resources-old-slot/SimpleStdMessages';
+import SimpleOverrideMessages from './resources-old-slot/SimpleOverrideMessages';
+import SimpleOverrideWildcard from './resources-old-slot/SimpleOverrideWildcard';
+import SimpleDynMessages from './resources-old-slot/SimpleDynMessages';
+import SimpleDynOverrideMessages from './resources-old-slot/SimpleDynOverrideMessages';
 
 describe('Integration', () => {
-  describe('context', () => {
+  describe('simple', () => {
 
-    describe('CtxStdMessages', () => {
+    describe('SimpleStdMessages', () => {
       let wrapper = null;
 
       beforeAll(() => {
-        wrapper = mount(CtxStdMessages, {
-          propsData: {
-            obj: { code: 1 },
-          },
+        wrapper = mount(SimpleStdMessages, {
+          propsData: { code: 'one' },
         });
       });
 
@@ -27,41 +25,33 @@ describe('Integration', () => {
       });
 
       test('should display case "two"', async () => {
-        wrapper.setProps({
-          obj: { code: 2, d: { e: { e: { p: 'deep prop' } } } },
-        });
+        wrapper.setProps({ code: 'two' });
         await Vue.nextTick();
-        expect(wrapper.text()).toEqual('default two (deep prop)');
+        expect(wrapper.text()).toEqual('default two');
         expect(wrapper.html()).toMatchSnapshot();
       });
 
       test('should display wildcard case for "dyn"', async () => {
-        wrapper.setProps({
-          obj: { code: 'dyn' },
-        });
+        wrapper.setProps({ code: 'dyn' });
         await Vue.nextTick();
         expect(wrapper.text()).toEqual('default wildcard (dyn)');
         expect(wrapper.html()).toMatchSnapshot();
       });
 
       test('should display wildcard message for "unknown"', async () => {
-        wrapper.setProps({
-          obj: { code: 'unknown', other: 'other prop' },
-        });
+        wrapper.setProps({ code: 'unknown' });
         await Vue.nextTick();
-        expect(wrapper.text()).toEqual('default wildcard (unknown) (other prop)');
+        expect(wrapper.text()).toEqual('default wildcard (unknown)');
         expect(wrapper.html()).toMatchSnapshot();
       });
     });
 
-    describe('CtxOverrideMessages', () => {
+    describe('SimpleOverrideMessages', () => {
       let wrapper = null;
 
       beforeAll(() => {
-        wrapper = mount(CtxOverrideMessages, {
-          propsData: {
-            obj: { code: 1 },
-          },
+        wrapper = mount(SimpleOverrideMessages, {
+          propsData: { code: 'one' },
         });
       });
 
@@ -71,41 +61,33 @@ describe('Integration', () => {
       });
 
       test('should display custom case "two"', async () => {
-        wrapper.setProps({
-          obj: { code: 2, d: { e: { e: { p: 'deep prop' } } } },
-        });
+        wrapper.setProps({ code: 'two' });
         await Vue.nextTick();
-        expect(wrapper.text()).toEqual('custom two [deep prop]');
+        expect(wrapper.text()).toEqual('custom two');
         expect(wrapper.html()).toMatchSnapshot();
       });
 
       test('should display wildcard case for "dyn"', async () => {
-        wrapper.setProps({
-          obj: { code: 'dyn' },
-        });
+        wrapper.setProps({ code: 'dyn' });
         await Vue.nextTick();
         expect(wrapper.text()).toEqual('default wildcard (dyn)');
         expect(wrapper.html()).toMatchSnapshot();
       });
 
       test('should display wildcard message for "unknown"', async () => {
-        wrapper.setProps({
-          obj: { code: 'unknown', other: 'other prop' },
-        });
+        wrapper.setProps({ code: 'unknown' });
         await Vue.nextTick();
-        expect(wrapper.text()).toEqual('default wildcard (unknown) (other prop)');
+        expect(wrapper.text()).toEqual('default wildcard (unknown)');
         expect(wrapper.html()).toMatchSnapshot();
       });
     });
 
-    describe('CtxOverrideWildcard', () => {
+    describe('SimpleOverrideWildcard', () => {
       let wrapper = null;
 
       beforeAll(() => {
-        wrapper = mount(CtxOverrideWildcard, {
-          propsData: {
-            obj: { code: 1 },
-          },
+        wrapper = mount(SimpleOverrideWildcard, {
+          propsData: { code: 'one' },
         });
       });
 
@@ -116,41 +98,33 @@ describe('Integration', () => {
       });
 
       test('should display custom case "two"', async () => {
-        wrapper.setProps({
-          obj: { code: 2, d: { e: { e: { p: 'deep prop' } } } },
-        });
+        wrapper.setProps({ code: 'two' });
         await Vue.nextTick();
-        expect(wrapper.text()).toEqual('custom two @deep prop@');
+        expect(wrapper.text()).toEqual('custom two');
         expect(wrapper.html()).toMatchSnapshot();
       });
 
       test('should display custom wildcard case for "dyn"', async () => {
-        wrapper.setProps({
-          obj: { code: 'dyn' },
-        });
+        wrapper.setProps({ code: 'dyn' });
         await Vue.nextTick();
-        expect(wrapper.text()).toEqual('custom wildcard |dyn|');
+        expect(wrapper.text()).toEqual('custom wildcard [dyn]');
         expect(wrapper.html()).toMatchSnapshot();
       });
 
       test('should display custom wildcard message for "unknown"', async () => {
-        wrapper.setProps({
-          obj: { code: 'unknown', other: 'other prop' },
-        });
+        wrapper.setProps({ code: 'unknown' });
         await Vue.nextTick();
-        expect(wrapper.text()).toEqual('custom wildcard |unknown|other prop|');
+        expect(wrapper.text()).toEqual('custom wildcard [unknown]');
         expect(wrapper.html()).toMatchSnapshot();
       });
     });
 
-    describe('CtxDynMessages', () => {
+    describe('SimpleDynMessages', () => {
       let wrapper = null;
 
       beforeAll(() => {
-        wrapper = mount(CtxDynMessages, {
-          propsData: {
-            obj: { code: 1 },
-          },
+        wrapper = mount(SimpleDynMessages, {
+          propsData: { code: 'one' },
         });
       });
 
@@ -160,41 +134,33 @@ describe('Integration', () => {
       });
 
       test('should display custom case "two"', async () => {
-        wrapper.setProps({
-          obj: { code: 2, d: { e: { e: { p: 'deep prop' } } } },
-        });
+        wrapper.setProps({ code: 'two' });
         await Vue.nextTick();
-        expect(wrapper.text()).toEqual('custom two @deep prop@');
+        expect(wrapper.text()).toEqual('custom two');
         expect(wrapper.html()).toMatchSnapshot();
       });
 
       test('should display dynamic case for "dyn"', async () => {
-        wrapper.setProps({
-          obj: { code: 'dyn' },
-        });
+        wrapper.setProps({ code: 'dyn' });
         await Vue.nextTick();
-        expect(wrapper.text()).toEqual('dynamic message -dyn-');
+        expect(wrapper.text()).toEqual('dynamic message');
         expect(wrapper.html()).toMatchSnapshot();
       });
 
       test('should display custom wildcard message for "unknown"', async () => {
-        wrapper.setProps({
-          obj: { code: 'unknown', other: 'other prop' },
-        });
+        wrapper.setProps({ code: 'unknown' });
         await Vue.nextTick();
-        expect(wrapper.text()).toEqual('default wildcard (unknown) (other prop)');
+        expect(wrapper.text()).toEqual('default wildcard (unknown)');
         expect(wrapper.html()).toMatchSnapshot();
       });
     });
 
-    describe('CtxDynOverrideMessages', () => {
+    describe('SimpleDynOverrideMessages', () => {
       let wrapper = null;
 
       beforeAll(() => {
-        wrapper = mount(CtxDynOverrideMessages, {
-          propsData: {
-            obj: { code: 1 },
-          },
+        wrapper = mount(SimpleDynOverrideMessages, {
+          propsData: { code: 'one' },
         });
       });
 
@@ -204,29 +170,23 @@ describe('Integration', () => {
       });
 
       test('should display custom case "two"', async () => {
-        wrapper.setProps({
-          obj: { code: 2, d: { e: { e: { p: 'deep prop' } } } },
-        });
+        wrapper.setProps({ code: 'two' });
         await Vue.nextTick();
-        expect(wrapper.text()).toEqual('custom two @deep prop@');
+        expect(wrapper.text()).toEqual('custom two');
         expect(wrapper.html()).toMatchSnapshot();
       });
 
       test('should display dynamic case for "dyn"', async () => {
-        wrapper.setProps({
-          obj: { code: 'dyn' },
-        });
+        wrapper.setProps({ code: 'dyn' });
         await Vue.nextTick();
-        expect(wrapper.text()).toEqual('dynamic message -dyn-');
+        expect(wrapper.text()).toEqual('dynamic message');
         expect(wrapper.html()).toMatchSnapshot();
       });
 
       test('should display custom wildcard message for "unknown"', async () => {
-        wrapper.setProps({
-          obj: { code: 'unknown', other: 'other prop' },
-        });
+        wrapper.setProps({ code: 'unknown' });
         await Vue.nextTick();
-        expect(wrapper.text()).toEqual('custom wildcard |unknown|other prop|');
+        expect(wrapper.text()).toEqual('custom wildcard [unknown]');
         expect(wrapper.html()).toMatchSnapshot();
       });
     });
