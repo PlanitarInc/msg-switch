@@ -64,7 +64,72 @@ In the example above the following scenarios are possible:
 - If the error code is `dynamic`, the custom error message would be displayed:
     `Message for error code missing in StdError.`.
 
+### Access Parent Scope Example
+
+In this example an additional context is passed to `MsgSwitch`. This context is
+treated as an opaque value and is passed as is to `MsgCase` components.
+It can be used inside `MsgCase` components using
+[scoped slots](https://vuejs.org/v2/guide/components-slots.html#Scoped-Slots) as
+show below.
+
+```html
+// StdErrorParentScope.vue
+<MsgSwitch :value="error.code">
+  <!--
+    User-defined custom messages comes first,
+    such that they overwrite the default messages.
+  -->
+  <slot :value="error.code" />
+
+  <!-- Here the standard error messages come -->
+  <MsgCase when="unautheticated">Please log in!</MsgCase>
+  <MsgCase when="not_found">
+    <template #default>
+      Resource {{ error.id }} was not found.
+    </template>
+  </MsgCase>
+  <MsgCase when="forbidden">
+    <template #default>
+      You do not enough permissions to {{ error.method }} {{ error.resourceName }}.
+    </template>
+  </MsgCase>
+  <!-- A standrard wildcard case. -->
+  <MsgCase when="*">
+    <template #default="{ value }">
+      Unknown error (<code>{{value}}</code>): <pre>{{ error }}</pre>.
+    </template>
+  </MsgCase>
+</MsgSwitch>
+```
+
+Than this component is used as follows:
+
+```html
+// App.vue
+<StdErrorParentScope :error="error">
+  <MsgCase when="not_found">
+    <template #default>
+      User {{ error.id }} was not found.
+    </template>
+  </MsgCase>
+  <MsgCase when="dynamic">
+    <template #default>
+      Message for error code missing in StdError:
+      <pre>{{ error.someDebugInfo }}</pre>.
+    </template>
+  </MsgCase>
+</StdErrorWithContext>
+```
+
+
 ### Context Example
+
+**Update 2019-02-08**: Vue 2.6 added support for the new `v-slot` syntax.
+This made the `ctx` prop redundant.
+Checkout [Access Parent Scope Example](#access-parent-scope-example).
+For more details about `v-slot` please refer to
+[Vue 2.6 release blog post](https://medium.com/the-vue-point/vue-2-6-released-66aa6c8e785e)
+and [updated Vue slot docs](https://vuejs.org/v2/guide/components-slots.html).
 
 In this example an additional context is passed to `MsgSwitch`. This context is
 treated as an opaque value and is passed as is to `MsgCase` components.
