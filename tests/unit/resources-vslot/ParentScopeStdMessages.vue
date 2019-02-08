@@ -4,16 +4,12 @@
     <MsgCase when="one">
       default one
     </MsgCase>
-    <MsgCase when="two">
-      <template #default>
-        default two ({{ obj.d.e.e.p }})
-      </template>
+    <MsgCase when="two" #default>
+      default two ({{ obj.d.e.e.p }})
     </MsgCase>
-    <MsgCase when="*">
-      <template #default="{ value }">
-        <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
-        default wildcard ({{ value }}) <span v-if="!!obj.other">({{ obj.other }})</span>
-      </template>
+    <MsgCase when="*" #default="{ value }">
+      <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
+      default wildcard ({{ value }}) <span v-if="!!obj.other">({{ obj.other }})</span>
     </MsgCase>
   </MsgSwitch>
 </template>

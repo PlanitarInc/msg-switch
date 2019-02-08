@@ -1,20 +1,14 @@
 <template>
   <CtxStdMessages :obj="obj">
-    <MsgCase when="two">
-      <template #default>
-        custom two @{{ obj.d.e.e.p }}@
-      </template>
+    <MsgCase when="two" #default>
+      custom two @{{ obj.d.e.e.p }}@
     </MsgCase>
-    <MsgCase when="dyn">
-      <template #default>
-        dynamic message -{{ obj.code }}-
-      </template>
+    <MsgCase when="dyn" #default>
+      dynamic message -{{ obj.code }}-
     </MsgCase>
-    <MsgCase when="*">
-      <template #default="{ value }">
-        <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
-        custom wildcard |{{ value }}<span v-if="!!obj.other">|{{ obj.other }}</span>|
-      </template>
+    <MsgCase when="*" #default="{ value }">
+      <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
+      custom wildcard |{{ value }}<span v-if="!!obj.other">|{{ obj.other }}</span>|
     </MsgCase>
   </CtxStdMessages>
 </template>

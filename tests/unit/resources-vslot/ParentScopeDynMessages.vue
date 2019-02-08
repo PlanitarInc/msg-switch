@@ -1,14 +1,10 @@
 <template>
   <CtxStdMessages :obj="obj">
-    <MsgCase when="two">
-      <template #default>
-        custom two @{{ obj.d.e.e.p }}@
-      </template>
+    <MsgCase when="two" #default>
+      custom two @{{ obj.d.e.e.p }}@
     </MsgCase>
-    <MsgCase when="dyn">
-      <template #default>
-        dynamic message -{{ obj.code }}-
-      </template>
+    <MsgCase when="dyn" #default>
+      dynamic message -{{ obj.code }}-
     </MsgCase>
   </CtxStdMessages>
 </template>

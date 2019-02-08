@@ -46,8 +46,8 @@ exports[`Integration context ParentScopeDynMessages should display case "one" 1`
 
 exports[`Integration context ParentScopeDynMessages should display custom case "two" 1`] = `
 <span class="msg-switch"><span class="msg-case">
-      custom two @deep prop@
-    </span>
+    custom two @deep prop@
+  </span>
 <!---->
 <!---->
 <!---->
@@ -61,8 +61,8 @@ exports[`Integration context ParentScopeDynMessages should display custom wildca
 
 exports[`Integration context ParentScopeDynMessages should display dynamic case for "dyn" 1`] = `
 <span class="msg-switch"><!----> <span class="msg-case">
-      dynamic message -dyn-
-    </span>
+    dynamic message -dyn-
+  </span>
 <!---->
 <!---->
 <!----></span>
@@ -78,8 +78,8 @@ exports[`Integration context ParentScopeDynOverrideMessages should display case 
 
 exports[`Integration context ParentScopeDynOverrideMessages should display custom case "two" 1`] = `
 <span class="msg-switch"><span class="msg-case">
-      custom two @deep prop@
-    </span>
+    custom two @deep prop@
+  </span>
 <!---->
 <!---->
 <!---->
@@ -89,7 +89,7 @@ exports[`Integration context ParentScopeDynOverrideMessages should display custo
 
 exports[`Integration context ParentScopeDynOverrideMessages should display custom wildcard message for "unknown" 1`] = `
 <span class="msg-switch"><!----> <!----> <span class="msg-case">
-      custom wildcard |unknown<span>|other prop</span>|
+    custom wildcard |unknown<span>|other prop</span>|
 </span>
 <!---->
 <!---->
@@ -98,8 +98,8 @@ exports[`Integration context ParentScopeDynOverrideMessages should display custo
 
 exports[`Integration context ParentScopeDynOverrideMessages should display dynamic case for "dyn" 1`] = `
 <span class="msg-switch"><!----> <span class="msg-case">
-      dynamic message -dyn-
-    </span>
+    dynamic message -dyn-
+  </span>
 <!---->
 <!---->
 <!---->
@@ -116,8 +116,8 @@ exports[`Integration context ParentScopeOverrideMessages should display case "on
 
 exports[`Integration context ParentScopeOverrideMessages should display custom case "two" 1`] = `
 <span class="msg-switch"><span class="msg-case">
-      custom two [deep prop]
-    </span>
+    custom two [deep prop]
+  </span>
 <!---->
 <!---->
 <!----></span>
@@ -143,17 +143,17 @@ exports[`Integration context ParentScopeStdMessages should display case "one" 1`
 
 exports[`Integration context ParentScopeStdMessages should display case "two" 1`] = `
 <span class="msg-switch"> <!----> <span class="msg-case">
-      default two (deep prop)
-    </span>
+    default two (deep prop)
+  </span>
 <!----></span>
 `;
 
 exports[`Integration context ParentScopeStdMessages should display wildcard case for "dyn" 1`] = `
 <span class="msg-switch"> <!----> <!----> <span class="msg-case">
-      default wildcard (dyn) <!----></span></span>
+    default wildcard (dyn) <!----></span></span>
 `;
 
 exports[`Integration context ParentScopeStdMessages should display wildcard message for "unknown" 1`] = `
 <span class="msg-switch"> <!----> <!----> <span class="msg-case">
-      default wildcard (unknown) <span>(other prop)</span></span></span>
+    default wildcard (unknown) <span>(other prop)</span></span></span>
 `;

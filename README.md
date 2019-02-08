@@ -83,21 +83,15 @@ show below.
 
   <!-- Here the standard error messages come -->
   <MsgCase when="unautheticated">Please log in!</MsgCase>
-  <MsgCase when="not_found">
-    <template #default>
-      Resource {{ error.id }} was not found.
-    </template>
+  <MsgCase when="not_found" #default>
+    Resource {{ error.id }} was not found.
   </MsgCase>
-  <MsgCase when="forbidden">
-    <template #default>
-      You do not enough permissions to {{ error.method }} {{ error.resourceName }}.
-    </template>
+  <MsgCase when="forbidden" #default>
+    You do not enough permissions to {{ error.method }} {{ error.resourceName }}.
   </MsgCase>
   <!-- A standrard wildcard case. -->
-  <MsgCase when="*">
-    <template #default="{ value }">
-      Unknown error (<code>{{value}}</code>): <pre>{{ error }}</pre>.
-    </template>
+  <MsgCase when="*" #default="{ value }">
+    Unknown error (<code>{{value}}</code>): <pre>{{ error }}</pre>.
   </MsgCase>
 </MsgSwitch>
 ```
@@ -107,16 +101,12 @@ Than this component is used as follows:
 ```html
 // App.vue
 <StdErrorParentScope :error="error">
-  <MsgCase when="not_found">
-    <template #default>
-      User {{ error.id }} was not found.
-    </template>
+  <MsgCase when="not_found" #default>
+    User {{ error.id }} was not found.
   </MsgCase>
-  <MsgCase when="dynamic">
-    <template #default>
-      Message for error code missing in StdError:
-      <pre>{{ error.someDebugInfo }}</pre>.
-    </template>
+  <MsgCase when="dynamic" #default>
+    Message for error code missing in StdError:
+    <pre>{{ error.someDebugInfo }}</pre>.
   </MsgCase>
 </StdErrorWithContext>
 ```
