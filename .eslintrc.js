@@ -6,7 +6,7 @@ module.exports = {
   },
 
   extends: [
-    process.env.NODE_ENV === 'production' ?
+    process.env.NODE_ENV === 'production' || process.env.CI === 'true' ?
       '@plntr/eslint-config/vue' : '@plntr/eslint-config/vue-dev',
   ],
 };
