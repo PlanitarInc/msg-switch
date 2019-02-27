@@ -9,7 +9,6 @@ import ParentScopeDynOverrideMessages from './resources-vslot/ParentScopeDynOver
 
 describe('Integration', () => {
   describe('context', () => {
-
     describe('ParentScopeStdMessages', () => {
       let wrapper = null;
 
@@ -230,6 +229,5 @@ describe('Integration', () => {
         expect(wrapper.html()).toMatchSnapshot();
       });
     });
-
   });
 });

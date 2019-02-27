@@ -9,7 +9,6 @@ import CtxDynOverrideMessages from './resources-vslot/CtxDynOverrideMessages';
 
 describe('Integration', () => {
   describe('context', () => {
-
     describe('CtxStdMessages', () => {
       let wrapper = null;
 
@@ -230,6 +229,5 @@ describe('Integration', () => {
         expect(wrapper.html()).toMatchSnapshot();
       });
     });
-
   });
 });

@@ -9,7 +9,6 @@ import SimpleDynOverrideMessages from './resources-vslot/SimpleDynOverrideMessag
 
 describe('Integration', () => {
   describe('simple', () => {
-
     describe('SimpleStdMessages', () => {
       let wrapper = null;
 
@@ -190,6 +189,5 @@ describe('Integration', () => {
         expect(wrapper.html()).toMatchSnapshot();
       });
     });
-
   });
 });
