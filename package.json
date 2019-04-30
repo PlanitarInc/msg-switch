@@ -16,7 +16,7 @@
     "vue": "^2.6.3"
   },
   "devDependencies": {
-    "@plntr/eslint-config": "1.0.1",
+    "@plntr/eslint-config": "1.2.1",
     "@vue/cli-plugin-babel": "3.7.0",
     "@vue/cli-plugin-eslint": "3.7.0",
     "@vue/cli-plugin-unit-jest": "3.7.0",
