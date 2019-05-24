@@ -16,7 +16,7 @@
     "vue": "^2.6.3"
   },
   "devDependencies": {
-    "@plntr/eslint-config": "1.0.1",
+    "@plntr/eslint-config": "^1.2.1",
     "@vue/cli-plugin-babel": "3.7.0",
     "@vue/cli-plugin-eslint": "3.7.0",
     "@vue/cli-plugin-unit-jest": "3.7.0",
@@ -24,6 +24,7 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.1",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-jest": "23.6.0",
     "babel-plugin-syntax-jsx": "6.18.0",
     "babel-plugin-transform-vue-jsx": "3.7.0",
@@ -31,9 +32,11 @@
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-airbnb-es5": "1.2.0",
     "eslint-plugin-import": "2.17.2",
+    "eslint-plugin-jest": "^22.6.4",
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-react": "7.13.0",
     "eslint-plugin-vue": "5.2.2",
+    "eslint-plugin-you-dont-need-lodash-underscore": "^6.5.0",
     "vue": "2.6.10",
     "vue-template-compiler": "2.6.10"
   }
