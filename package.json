@@ -37,7 +37,7 @@
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-react": "7.13.0",
     "eslint-plugin-vue": "5.2.2",
-    "eslint-plugin-you-dont-need-lodash-underscore": "6.5.0",
+    "eslint-plugin-you-dont-need-lodash-underscore": "6.7.0",
     "vue": "2.6.10",
     "vue-template-compiler": "2.6.10"
   }
