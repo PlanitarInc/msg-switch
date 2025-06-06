@@ -39,6 +39,6 @@
     "eslint-plugin-vue": "5.2.3",
     "eslint-plugin-you-dont-need-lodash-underscore": "6.7.0",
     "vue": "2.6.10",
-    "vue-template-compiler": "2.6.10"
+    "vue-template-compiler": "2.7.16"
   }
 }
